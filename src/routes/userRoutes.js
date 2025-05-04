@@ -10,7 +10,8 @@ const router = Router();
 // Registro
 router.post('/register', async (req, res, next) => {
   try {
-    const {nome,  username, password } = req.body;
+    const {nome, 
+       username, password } = req.body;
     const user = await createUser(nome, username, password);
     res.status(201).json(user);
   } catch (err) {

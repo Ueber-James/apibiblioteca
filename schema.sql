@@ -1,8 +1,7 @@
 CREATE TABLE usuarios (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(50) NOT NULL,
-  username VARCHAR(50) UNIQUE NOT NULL,
-  password VARCHAR(255) NOT NULL
+  matricula VARCHAR(50) UNIQUE NOT NULL,
 );
 
 
