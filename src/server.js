@@ -1,3 +1,4 @@
+// src/app.js (ou server.js)
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -20,8 +21,8 @@ app.use('/api/livros', livrosRouter);
 app.use('/api/emprestimos', emprestimoRouter);
 
 // Tratamento de erros
-app.use((err, req, res, next) => {
-  console.error(err);
+app.use((err, _req, res, _next) => {
+  console.error('!! ERRO GLOBAL:', err);
   res.status(500).json({ error: 'Erro interno' });
 });
 
