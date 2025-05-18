@@ -5,7 +5,7 @@ import { createAluno, listAlunos } from '../models/alunoModel.js';
 const router = Router();
 
 /** POST /api/alunos */
-router.post('/', async (req, res, next) => {
+router.post('/register', async (req, res, next) => {
   console.log('>> Recebido POST /api/alunos', req.body);
   try {
     const aluno = await createAluno(req.body);
