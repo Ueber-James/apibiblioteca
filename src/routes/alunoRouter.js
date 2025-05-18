@@ -4,13 +4,11 @@ import { createAluno, listAlunos } from '../models/alunoModel.js';
 const router = Router();
 
 router.post('/', async (req, res, next) => {
-  console.log('>> Recebido POST /api/alunos', req.body);
   try {
-    const aluno = await createAluno(req.body);
-    console.log('>> Criado no DB:', aluno);
+    const { matricula, nome } = req.body;
+    const aluno = await createAluno({ matricula, nome });
     res.status(201).json(aluno);
   } catch (err) {
-    console.error('!! ERRO createAluno:', err);
     next(err);
   }
 });
