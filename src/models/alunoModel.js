@@ -5,7 +5,7 @@ export async function createAluno({ matricula, nome }) {
   const res = await pool.query(
     `INSERT INTO aluno (matricula, nome)
      VALUES ($1, $2)
-     RETURNING matricula, nome`,
+     RETURNING id, matricula, nome`,
     [matricula, nome]
   );
   return res.rows[0];
