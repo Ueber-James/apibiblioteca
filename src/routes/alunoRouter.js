@@ -5,6 +5,7 @@ const router = Router();
 
 /** POST /api/alunos */
 router.post('/', async (req, res, next) => {
+  console.log('POST /api/alunos payload:', req.body);
   try {
     const aluno = await createAluno(req.body);
     res.status(201).json(aluno);
@@ -12,6 +13,7 @@ router.post('/', async (req, res, next) => {
     next(err);
   }
 });
+
 
 /** GET /api/alunos */
 router.get('/', async (_req, res, next) => {
