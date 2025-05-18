@@ -5,11 +5,11 @@ import { createAluno, listAlunos } from '../models/alunoModel.js';
 const router = Router();
 
 /** POST /api/alunos */
-router.post('/register', async (req, res, next) => {
-  console.log('>> Recebido POST /api/alunos', req.body);
+router.post('/', async (req, res, next) => {
+  console.log('>> POST /api/alunos', req.body);
   try {
     const aluno = await createAluno(req.body);
-    console.log('>> Inserido no DB:', aluno);
+    console.log('>> criado:', aluno);
     res.status(201).json(aluno);
   } catch (err) {
     console.error('!! ERRO createAluno:', err);
