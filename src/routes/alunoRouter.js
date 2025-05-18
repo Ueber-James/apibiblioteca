@@ -5,8 +5,8 @@ const router = Router();
 
 router.post('/', async (req, res, next) => {
   try {
-    const { matricula, nome } = req.body;
-    const aluno = await createAluno({ matricula, nome });
+    console.log('Dados recebidos:', req.body); // ← Log de depuração
+    const aluno = await createAluno(req.body);
     res.status(201).json(aluno);
   } catch (err) {
     next(err);
